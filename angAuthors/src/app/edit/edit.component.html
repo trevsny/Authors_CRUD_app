@@ -1,0 +1,10 @@
+<a [routerLink] = "['/']">Home</a>
+<h2>Edit this author: </h2>
+<div *ngIf = "name">
+    <form (submit) = "updateAuthor(name)">
+      <label for="name">Name:</label>
+      <input type="text" name="name.name" [(ngModel)] = "name.name" value = "{{name.name}}">
+      <button [routerLink] = "['/']" value="Cancel">Cancel</button> <!--redirect to root route-->
+      <input  type = "submit" value = "Update"> <!--redirect to root route after creation-->
+    </form>
+  </div>

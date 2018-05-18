@@ -1,0 +1,16 @@
+<a [routerLink] = "['/']">Home</a>
+
+<h2>Add a new author:</h2>
+<div>
+  <div *ngIf = "errors">
+    <p *ngFor = "let e of errors">{{e}}</p>
+  </div>
+  <form (submit) = "addAuthor()">
+    <label for="name">Name:</label>
+    <input type="text" name="name.name" [(ngModel)] = "name.name" placeholder="Author Name">
+    <button [routerLink] = "['/']" value="Cancel">Cancel</button> <!--redirect to root route-->
+    <input type = "submit" value = "Submit"> <!--redirect to root route after creation-->
+  </form>
+  <a [routerLink] = "['daughter']">Send me to the child component</a>
+</div>
+ <router-outlet></router-outlet>
